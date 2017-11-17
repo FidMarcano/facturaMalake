@@ -16,7 +16,7 @@ class reportesController extends Controller
      */
     public function index()
     {
-       return view::make('home')->with(['n'=>5, 'n1' => 0]);
+       return view::make('home')->with(['n'=>5, 'n1' => 0,'n2' => 0]);
     }
 
     /**
