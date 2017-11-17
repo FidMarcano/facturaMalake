@@ -15,9 +15,15 @@ class Ingreso extends Model
     	$neto = Ingreso::Neto($costo, $IVA);
     	$PE = Ingreso::parteEstilista($neto);
     	$PL = Ingreso::parteLocal($neto);
+        $Ano = Ingreso::Ano();
+        $Mes = Ingreso::Mes();
+        $Dia = Ingreso::Dia();
+        $Semana = Ingreso::Semana();
+        
     	
-    	$fecha = Carbon::now();
-    	$id = DB::table('registros')->insertGetId([
+    	$fecha = Carbon::now()->toDateString();
+        $id = DB::table('registros')->insertGetId([
+
     		'id_estilista'=>$trabajador,
     		'costo'=>$costo,
     		'neto'=>$neto,
@@ -27,7 +33,12 @@ class Ingreso extends Model
     		'id_concepto'=> $concepto,
             'id_metodo'=> $metodo,
     		'id_cliente'=> $cliente,
-    		'fecha'=>$fecha
+    		'fecha'=>$fecha,
+            'ano'=>$Ano,
+            'mes'=>$Mes,
+            'dia'=>$Dia,
+            'semana'=>$Semana
+
        	]);
 
        	return $id;
@@ -68,5 +79,29 @@ class Ingreso extends Model
     	}
 
     	return $iva;
+    }
+
+    static function Ano()
+    {
+        $now = Carbon::now();
+        return $now->year;
+    }
+
+    static function Mes()
+    {
+        $now = Carbon::now();
+        return $now->month;
+    }
+
+    static function Dia()
+    {
+        $now = Carbon::now();
+        return $now->day;
+    }
+
+    static function Semana()
+    {
+        $now = Carbon::now();
+        return $now->weekOfYear;
     }
 }

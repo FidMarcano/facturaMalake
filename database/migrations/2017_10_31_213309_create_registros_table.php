@@ -24,7 +24,11 @@ class CreateRegistrosTable extends Migration
             $table->tinyInteger('id_metodo');
             $table->tinyInteger('id_cliente');
             $table->tinyInteger('id_concepto');
-            $table->timestamp('fecha');
+            $table->date('fecha');
+            $table->integer('ano');
+            $table->integer('mes');
+            $table->integer('dia');
+            $table->integer('semana');
         });
     }
 

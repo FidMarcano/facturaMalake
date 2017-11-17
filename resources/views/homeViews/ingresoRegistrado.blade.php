@@ -23,6 +23,10 @@
                             <td>{{ $cliente->direccion }}</td>
                         </tr>
                         <tr>
+                            <th>Fecha</th>
+                            <td>{{ $ingreso->dia }}/{{ $ingreso->mes }}/{{ $ingreso->ano }}</td>
+                        </tr>
+                        <tr>
                             <th>Método de pago</th>
                             @foreach($metodos as $m)
                                 @if($ingreso->id_metodo == $m->id)
@@ -41,6 +45,14 @@
                         <tr>
                             <th>Costo básico</th>
                             <td>{{ $ingreso->neto }}</td>
+                        </tr>
+                        <tr>
+                            <th>Parte local</th>
+                            <td>{{ $ingreso->parte_local }}</td>
+                        </tr>
+                        <tr>
+                            <th>Parte estilista</th>
+                            <td>{{ $ingreso->parte_estilista }}</td>
                         </tr>
                         <tr>
                             <th>IVA</th>

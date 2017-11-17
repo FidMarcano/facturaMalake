@@ -12,6 +12,8 @@
                         Registrar ingreso: Confirmar cliente
                     @elseif($n==3)
                         Registrar ingreso: Ingresar datos
+                    @elseif($n==5)
+                        Reportes
                     @endif
 
                 </div>
@@ -25,7 +27,9 @@
                     @elseif($n==3)
                         @include('formularios.registroIngreso') 
                     @elseif($n==4)
-                        @include('homeViews.ingresoRegistrado')   
+                        @include('homeViews.ingresoRegistrado')
+                     @elseif($n==5)
+                        @include('homeViews.inicioReportes')   
                     @endif
                 </div>
             </div>

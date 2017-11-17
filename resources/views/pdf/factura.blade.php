@@ -7,49 +7,61 @@
 	<body>
 		<table>
 	        <tr>
-	            <th>Nombre</th>
-	            <td>{{ ucfirst($cliente->nombre) }} {{ ucfirst($cliente->apellido) }}</td>
-	        </tr>
-	        <tr>
-	            <th>Cédula</th>
-	            <td>{{ $cliente->cedula }}</td>
-	        </tr>
-	        <tr>
-	            <th>Teléfono</th>
-	            <td>{{ $cliente->telefono }}</td>
-	        </tr>
-	        <tr>
-	            <th>Dirección</th>
-	            <td>{{ $cliente->direccion }}</td>
-	        </tr>
-	        <tr>
-	            <th>Método de pago</th>
-	            @foreach($metodos as $m)
-	                @if($ingreso->id_metodo == $m->id)
-	                    <td>{{ ucfirst($m->metodo) }}</td>
-	                @endif
-	            @endforeach
-	        </tr>
-	        <tr>
-	            <th>Concepto</th>
-	            @foreach($conceptos as $c)
-	                @if($ingreso->id_concepto == $c->id)
-	                    <td>{{ ucfirst($c->concepto) }}</td>
-	                @endif
-	            @endforeach
-	        </tr>
-	        <tr>
-	            <th>Costo básico</th>
-	            <td>{{ $ingreso->neto }}</td>
-	        </tr>
-	        <tr>
-	            <th>IVA</th>
-	            <td>{{ $ingreso->iva }}</td>
-	        </tr>
-	        <tr>
-	            <th>Costo total</th>
-	            <td>{{ $ingreso->costo }}</td>
-	        </tr>
-	    </table>
+            <th>Nombre</th>
+                <td>{{ ucfirst($cliente->nombre) }} {{ ucfirst($cliente->apellido) }}</td>
+            </tr>
+            <tr>
+                <th>Cédula</th>
+                <td>{{ $cliente->cedula }}</td>
+            </tr>
+            <tr>
+                <th>Teléfono</th>
+                <td>{{ $cliente->telefono }}</td>
+            </tr>
+            <tr>
+                <th>Dirección</th>
+                <td>{{ $cliente->direccion }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ $ingreso->dia }}/{{ $ingreso->mes }}/{{ $ingreso->ano }}</td>
+            </tr>
+            <tr>
+                <th>Método de pago</th>
+                @foreach($metodos as $m)
+                    @if($ingreso->id_metodo == $m->id)
+                        <td>{{ ucfirst($m->metodo) }}</td>
+                    @endif
+                @endforeach
+            </tr>
+            <tr>
+                <th>Concepto</th>
+                @foreach($conceptos as $c)
+                    @if($ingreso->id_concepto == $c->id)
+                        <td>{{ ucfirst($c->concepto) }}</td>
+                    @endif
+                @endforeach
+            </tr>
+            <tr>
+                <th>Costo total</th>
+                <td>{{ $ingreso->costo }}</td>
+            </tr>
+            <tr>
+                <th>Costo neto</th>
+                <td>{{ $ingreso->neto }}</td>
+            </tr>
+            <tr>
+                <th>IVA</th>
+                <td>{{ $ingreso->iva }}</td>
+            </tr>
+            <tr>
+                <th>Parte local</th>
+                <td>{{ $ingreso->parte_local }}</td>
+            </tr>
+            <tr>
+                <th>Parte local</th>
+                <td>{{ $ingreso->parte_estilista }}</td>
+            </tr>
+        </table>
 	</body>
 </html>

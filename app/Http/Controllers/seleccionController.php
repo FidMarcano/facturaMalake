@@ -16,9 +16,6 @@ class seleccionController extends Controller
     		return view::make('home')->with(['n'=>2]);
     	
     	}
-    	if (isset($request->descargar)) {
-    		echo "Descargar";
-    	}
     	if (isset($request->registros)) {
     		echo "Registros";
     	}
