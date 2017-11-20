@@ -25,6 +25,17 @@
 				</td>
 			</tr>
 		@endforeach
+
+		<tr>
+			<td>
+				<form action="{{ url('/reporte_mensual') }}" method="get">
+						{{ csrf_field() }}
+                    <button type="submit" class="btn btn-primary" name="reporteMensual">
+                        Descargar reporte del mes
+                    </button>
+            	</form>
+			</td>
+		</tr>
 	</table>
 
 </div>

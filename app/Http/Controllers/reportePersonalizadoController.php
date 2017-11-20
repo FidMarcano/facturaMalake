@@ -27,7 +27,7 @@ class reportePersonalizadoController extends Controller
 	    		$resultados = Reporte::Personalizado($fecha1, $fecha2);
 	    		$min = DB::table('registros')->orderBy('fecha')->first();
 	            $max = DB::table('registros')->orderBy('fecha', 'DESC')->first();
-	            return view::make('home')->with(['n'=>5, 'n1' => 5,'n2'=>1, 'min' => $min, 'max' => $max, 'resultados'=>$resultados, 'clinetes' => $clientes, 'usuarios'=> $usuarios]);
+	            return view::make('home')->with(['n'=>5, 'n1' => 5,'n2'=>1, 'min' => $min, 'max' => $max, 'resultados'=>$resultados, 'clinetes' => $clientes, 'usuarios'=> $usuarios, 'fecha1'=> $fecha1, 'fecha2'=> $fecha2]);
 
 	    	}elseif($validar == 0){
 	    		return back();

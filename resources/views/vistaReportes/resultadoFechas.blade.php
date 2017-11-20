@@ -25,6 +25,19 @@
 				</td>
 			</tr>
 		@endforeach
+
+		<tr>
+			<td>
+				<form action="{{ url('/reporte_personalizado') }}" method="get">
+					{{ csrf_field() }}
+					<input type="date" value="{{ $fecha1 }}" name="fecha1" hidden="true">
+					<input type="date" value="{{ $fecha2 }}" name="fecha2" hidden="true">
+				    <button type="submit" class="btn btn-primary" name="reporteSemanal">
+				        Descargar reporte personalizado
+				    </button>
+				</form>
+			</td>
+		</tr>
 	</table>
 
 </div>
